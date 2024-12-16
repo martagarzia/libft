@@ -1,17 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mgarzia <mgarzia@student.42roma.it>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/16 18:17:51 by mgarzia           #+#    #+#             */
+/*   Updated: 2024/12/16 19:43:14 by mgarzia          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 
-void    *ft_calloc(size_t count, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
-    void    *ptr;
+	void	*ptr;
 
-    ptr = malloc(count * size);
-    if (!ptr)
-        return (NULL);
-    memset(ptr, 0, count * size);
-    return (ptr);
+	ptr = malloc(count * size);
+	if (!ptr)
+		return (NULL);
+	memset(ptr, 0, count * size);
+	return (ptr);
 }
 /*
 int main(void)
