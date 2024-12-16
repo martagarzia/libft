@@ -13,7 +13,7 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)s);
 	return (NULL);
 }
-
+/*
 int	main(void)
 {
 	char	str[] = "Dolphins are cool!";
@@ -21,3 +21,4 @@ int	main(void)
 	printf("%s\n", ft_strchr(str, 'z'));
 	return (0);
 }
+*/

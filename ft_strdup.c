@@ -20,7 +20,7 @@ char	*ft_strdup(const char *s1)
 	copy[i] = '\0';
 	return (copy);
 }
-
+/*
 int	main(void)
 {
 	char	*str = "Dolphins are cool!";
@@ -30,3 +30,4 @@ int	main(void)
 	free(dup);
 	return (0);
 }
+*/

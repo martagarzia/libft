@@ -14,7 +14,7 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 	}
 }
-
+/*
 int	main(void)
 {
 	char	buffer[50] = "Dolphins are cool!";
@@ -22,3 +22,4 @@ int	main(void)
 	printf("%s\n", buffer + 5); // Prints remaining string after 5 bytes.
 	return (0);
 }
+*/

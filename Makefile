@@ -1,6 +1,3 @@
-#make fclean
-#make
-
 NAME = libft.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
@@ -14,16 +11,28 @@ SRC = ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c ft_strlen.c \
 
 OBJ = $(SRC:.c=.o)
 
-all:
+$(NAME): $(OBJ)
+	@echo "Creating $(NAME) from $(OBJ)"
+	$(AR) $(NAME) $(OBJ)
+	@echo "$(NAME) successfully created"
+
+%.o: %.c
+	@echo "Compiling $< into $@"
+	$(CC) $(CFLAGS) -c $< -o $@
+
+all: $(NAME)
+	@echo "SRC: $(SRC)"
 	@echo "OBJ: $(OBJ)"
-	@echo "NAME: $(NAME)"
-	$(CC) $(CFLAGS) -c $(SRC)
-	$(AR) $(NAME) *.o
+	@echo "Build complete."
 
 clean:
+	@echo "Removing object files..."
 	rm -f $(OBJ)
 
 fclean: clean
+	@echo "Removing $(NAME)..."
 	rm -f $(NAME)
 
-.PHONY: all clean fclean
+re: fclean all
+
+.PHONY: all clean fclean re

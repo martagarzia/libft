@@ -1,3 +1,4 @@
+#include "libft.h"
 #include <unistd.h>
 #include <stdio.h>
 
@@ -7,7 +8,7 @@ int	ft_isalpha(int c)
 		return (1);
 	return (0);
 }
-
+/*
 int	main(void)
 {
 	int	character;
@@ -16,3 +17,4 @@ int	main(void)
 	printf("%d\n", ft_isalpha(character));
 	return (0);
 }
+*/

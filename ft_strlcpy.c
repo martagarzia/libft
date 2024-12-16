@@ -19,7 +19,7 @@ size_t ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	}
 	return (ft_strlen(src));
 }
-
+/*
 int	main(void)
 {
 	char	dst[20];
@@ -28,3 +28,4 @@ int	main(void)
 	printf("%s\n", dst);
 	return (0);
 }
+*/

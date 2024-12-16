@@ -1,3 +1,4 @@
+#include "libft.h"
 #include <stdio.h>
 
 int	ft_isdigit(int c)
@@ -6,7 +7,7 @@ int	ft_isdigit(int c)
 		return (1);
 	return (0);
 }
-
+/*
 int	main(void)
 {
 	char	test_char;
@@ -15,3 +16,4 @@ int	main(void)
 	printf("%d\n", ft_isdigit(test_char));
 	return (0);
 }
+*/

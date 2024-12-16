@@ -1,3 +1,4 @@
+#include "libft.h"
 #include <stdio.h>
 
 int ft_isprint(int c)
@@ -6,7 +7,7 @@ int ft_isprint(int c)
         return (1);
     return (0);
 }
-
+/*
 int main(void)
 {
     int c;
@@ -18,3 +19,4 @@ int main(void)
         printf("%c 2\n", c);
     return (0);
 }
+*/

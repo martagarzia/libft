@@ -15,7 +15,7 @@ void	*ft_memset(void *b, int c, size_t len)
 	}
 	return (b);
 }
-
+/*
 int	main(void)
 {
 	char	buffer[50] = "Dolphins are cool!";
@@ -23,3 +23,4 @@ int	main(void)
 	printf("%s\n", buffer);
 	return (0);
 }
+*/

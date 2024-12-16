@@ -16,7 +16,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
-
+/*
 int	main(void)
 {
 	char	str[] = "Dolphins are cool!";
@@ -24,3 +24,4 @@ int	main(void)
 	printf("%s\n", (char *)ft_memchr(str, 'z', 19));
 	return (0);
 }
+*/

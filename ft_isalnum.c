@@ -6,7 +6,7 @@ int ft_isalnum(int c)
         return (1);
     return (0);
 }
-
+/*
 int main(void)
 {
     char test_char;
@@ -16,3 +16,4 @@ int main(void)
     printf("%d\n", ft_isalnum(test_char));
     return (0);
 }
+*/

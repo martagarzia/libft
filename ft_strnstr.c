@@ -18,7 +18,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (NULL);
 }
-
+/*
 int	main(void)
 {
 	char	haystack[] = "Dolphins are cool!";
@@ -27,3 +27,4 @@ int	main(void)
 	printf("%s\n", ft_strnstr(haystack, "z", 19));
 	return (0);
 }
+*/

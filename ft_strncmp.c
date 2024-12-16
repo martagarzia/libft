@@ -14,10 +14,11 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (0);
 }
-
+/*
 int	main(void)
 {
 	printf("%d\n", ft_strncmp("Dolphins", "Dolphins are cool!", 8)); 
 	printf("%d\n", ft_strncmp("Dolphins", "Dolphin", 8)); 
 	return (0);
 }
+*/

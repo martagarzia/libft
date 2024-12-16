@@ -1,3 +1,4 @@
+#include "libft.h"
 #include <stdio.h>
 
 size_t  ft_strlen(const char *str)
@@ -9,7 +10,7 @@ size_t  ft_strlen(const char *str)
         i++;
     return (i);
 }
-
+/*
 int main(void)
 {
     char    *str;
@@ -20,3 +21,4 @@ int main(void)
     printf("%zu\n", length);
     return (0);
 }
+*/

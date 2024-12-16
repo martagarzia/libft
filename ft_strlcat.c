@@ -20,12 +20,13 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dst[d_len + i] = '\0';
 	return (d_len + s_len);
 }
-
+/*
 int	main(void)
 {
 	char	dst[30] = "Dolphins";
 	char	src[] = " are cool!";
-	printf("%zu\n", ft_strlcat(dst, src, 20)); // Output: 19
-	printf("%s\n", dst); // Output: "Dolphins are cool!"
+	printf("%zu\n", ft_strlcat(dst, src, 20)); 
+	printf("%s\n", dst);
 	return (0);
 }
+*/
