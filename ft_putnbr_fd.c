@@ -6,11 +6,12 @@
 /*   By: marta <marta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 12:05:16 by marta             #+#    #+#             */
-/*   Updated: 2024/12/18 13:04:46 by marta            ###   ########.fr       */
+/*   Updated: 2024/12/18 15:26:13 by marta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 void	ft_putnbr_fd(int n, int fd)
 {
@@ -29,3 +30,13 @@ void	ft_putnbr_fd(int n, int fd)
 	else
 		ft_putchar_fd(n + '0', fd);
 }
+/*
+int	main(void)
+{
+	ft_putnbr_fd(42, 1);
+	ft_putnbr_fd(-2147483648, 1);
+	ft_putnbr_fd(-42, 1);
+	ft_putnbr_fd(0, 1);
+	return (0);
+}
+*/

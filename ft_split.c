@@ -6,11 +6,12 @@
 /*   By: marta <marta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 12:28:56 by marta             #+#    #+#             */
-/*   Updated: 2024/12/18 13:01:15 by marta            ###   ########.fr       */
+/*   Updated: 2024/12/18 15:27:20 by marta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static void	ft_freeup(char *strs)
 {
@@ -113,3 +114,28 @@ char	**ft_split(char const *str, char c)
 	}
 	return (strs);
 }
+/*
+int main(void)
+{
+    char *str;
+    char **result;
+    int i;
+
+    str = "Dolphins are cool";
+    result = ft_split(str, ' ');
+    if (!result)
+    {
+        printf("Memory allocation failed.\n");
+        return (1);
+    }
+    i = 0;
+    while (result[i] != NULL)
+    {
+        printf("Word %d: %s\n", i, result[i]);
+        free(result[i]);
+        i++;
+    }
+    free(result);
+    return (0);
+}
+*/

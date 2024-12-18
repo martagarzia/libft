@@ -6,11 +6,12 @@
 /*   By: marta <marta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 12:11:27 by marta             #+#    #+#             */
-/*   Updated: 2024/12/18 13:03:36 by marta            ###   ########.fr       */
+/*   Updated: 2024/12/18 15:28:51 by marta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -29,3 +30,20 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	str[i] = '\0';
 	return (str);
 }
+/*
+int	main(void)
+{
+	char	*str;
+	char	*result;
+
+	str = "dolphins are cool";
+	result = ft_strmapi(str, ft_test_func);
+	if (result)
+	{
+		printf("Original: %s\n", str);
+		printf("Modified: %s\n", result);
+		free(result);
+	}
+	return (0);
+}
+*/
