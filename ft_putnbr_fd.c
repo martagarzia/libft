@@ -6,33 +6,26 @@
 /*   By: marta <marta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 12:05:16 by marta             #+#    #+#             */
-/*   Updated: 2024/12/18 12:05:26 by marta            ###   ########.fr       */
+/*   Updated: 2024/12/18 13:04:46 by marta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	c;
-
 	if (n == -2147483648)
-		return (write(fd, "-2147483648", 11));
-	if (n < 0)
+		ft_putstr_fd("-2147483648", fd);
+	else if (n < 0)
 	{
-		write(fd, "-", 1);
-		n = -n;
+		ft_putchar_fd('-', fd);
+		ft_putnbr_fd(-n, fd);
 	}
-	if (n >= 10)
+	else if (n >= 10)
+	{
 		ft_putnbr_fd(n / 10, fd);
-	c = '0' + (n % 10);
-	write(fd, &c, 1);
+		ft_putchar_fd(n % 10 + '0', fd);
+	}
+	else
+		ft_putchar_fd(n + '0', fd);
 }
-/*
-int	main(void)
-{
-	ft_putnbr_fd(123456, 1);
-	write(1, "\n", 1);
-	return (0);
-}
-*/
