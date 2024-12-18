@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: marta <marta@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/18 12:10:48 by marta             #+#    #+#             */
+/*   Updated: 2024/12/18 12:10:57 by marta            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
@@ -17,7 +29,7 @@ void	print_upper(unsigned int i, char *c)
 	if (i % 2 == 0)
 		*c -= 32;
 }
-
+/*
 int	main(void)
 {
 	char	str[] = "dolphins";
@@ -26,3 +38,4 @@ int	main(void)
 	printf("ft_striteri: %s\n", str);
 	return (0);
 }
+*/

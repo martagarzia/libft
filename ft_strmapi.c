@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: marta <marta@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/18 12:11:27 by marta             #+#    #+#             */
+/*   Updated: 2024/12/18 12:11:46 by marta            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -27,7 +39,7 @@ char	to_upper(unsigned int i, char c)
 		return (c - 32);
 	return (c);
 }
-
+/*
 int	main(void)
 {
 	char	*str;
@@ -39,3 +51,4 @@ int	main(void)
 	free(result);
 	return (0);
 }
+*/

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: marta <marta@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/18 12:12:09 by marta             #+#    #+#             */
+/*   Updated: 2024/12/18 12:12:18 by marta            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -22,7 +34,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	trimmed[end - start] = '\0';
 	return (trimmed);
 }
-
+/*
 int	main(void)
 {
 	char	*result;
@@ -32,3 +44,4 @@ int	main(void)
 	free(result);
 	return (0);
 }
+*/

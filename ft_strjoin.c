@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: marta <marta@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/18 12:11:02 by marta             #+#    #+#             */
+/*   Updated: 2024/12/18 12:11:12 by marta            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -24,7 +36,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	joined[i] = '\0';
 	return (joined);
 }
-
+/*
 int	main(void)
 {
 	char	*result;
@@ -34,3 +46,4 @@ int	main(void)
 	free(result);
 	return (0);
 }
+*/
