@@ -6,11 +6,13 @@
 /*   By: marta <marta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 12:12:09 by marta             #+#    #+#             */
-/*   Updated: 2024/12/18 15:11:19 by marta            ###   ########.fr       */
+/*   Updated: 2024/12/18 15:39:43 by marta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -33,3 +35,23 @@ char	*ft_strtrim(char const *s1, char const *set)
 	}
 	return (str);
 }
+/*
+int	main(void)
+{
+	char	*s1;
+	char	*set;
+	char	*result;
+
+	s1 = "Dolphins are cool";
+	set = "Dolphins";
+	result = ft_strtrim(s1, set);
+	if (result)
+	{
+		printf("Trimmed string: %s\n", result);
+		free(result);
+	}
+	else
+		printf("Error in trimming the string.\n");
+	return (0);
+}
+*/

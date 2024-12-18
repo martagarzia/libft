@@ -6,11 +6,12 @@
 /*   By: marta <marta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 18:20:09 by mgarzia           #+#    #+#             */
-/*   Updated: 2024/12/18 15:18:37 by marta            ###   ########.fr       */
+/*   Updated: 2024/12/18 15:35:50 by marta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
@@ -27,3 +28,18 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
+/*
+int	main(void)
+{
+	char	*str;
+	char	*result;
+
+	str = "Dolphins are cool";
+	result = ft_memchr(str, 'a', 15);
+	if (result != NULL)
+		printf("Character found: %c\n", *result);
+	else
+		printf("Character not found\n");
+	return (0);
+}
+*/
