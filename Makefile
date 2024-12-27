@@ -2,14 +2,14 @@ Library = libft
 
 files = ft_isalpha \
 		ft_isdigit \
+		ft_isalnum \
+		ft_isascii \
 
 		ft_strlen \
 		ft_memmove \
 		ft_memcpy \
 		ft_strlcpy \
 		ft_strlcat \
-		ft_isalnum \
-		ft_isascii \
 		ft_isprint \
 		ft_memset \
 		ft_bzero \
@@ -36,7 +36,7 @@ files = ft_isalpha \
 		ft_putendl_fd \
 		ft_putnbr_fd \
 
-Compiler = gcc
+Compiler = cc
 
 CmpFlags = -Wall -Wextra -Werror
 

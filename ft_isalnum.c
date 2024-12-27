@@ -6,12 +6,14 @@
 /*   By: marta <marta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 18:18:22 by mgarzia           #+#    #+#             */
-/*   Updated: 2024/12/18 12:52:30 by marta            ###   ########.fr       */
+/*   Updated: 2024/12/27 16:18:03 by marta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/* returns non-zero int if the character is alphanumeric*/
+
+/*#include <stdio.h>*/
 #include "libft.h"
-#include <stdio.h>
 
 int	ft_isalnum(int c)
 {
@@ -23,11 +25,12 @@ int	ft_isalnum(int c)
 /*
 int main(void)
 {
-    char test_char;
+	char alphanumber;
 
-    //test_char = '#';
-    test_char = 'D';
-    printf("%d\n", ft_isalnum(test_char));
-    return (0);
+	alphanumber = 'a';
+	//alphanumber = '2';
+	//alphanumber = '%';
+	printf("%d\n", ft_isalnum(alphanumber));
+	return (0);
 }
 */

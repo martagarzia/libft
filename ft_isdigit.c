@@ -6,14 +6,14 @@
 /*   By: marta <marta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 18:19:34 by mgarzia           #+#    #+#             */
-/*   Updated: 2024/12/27 15:07:55 by marta            ###   ########.fr       */
+/*   Updated: 2024/12/27 16:17:56 by marta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* returns non-zero if character is digit */
+/* returns non-zero int if character is digit */
 
+/* #include <stdio.h> */
 #include "libft.h"
-#include <stdio.h>
 
 int	ft_isdigit(int c)
 {

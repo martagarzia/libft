@@ -6,14 +6,14 @@
 /*   By: marta <marta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 18:18:47 by mgarzia           #+#    #+#             */
-/*   Updated: 2024/12/27 15:08:42 by marta            ###   ########.fr       */
+/*   Updated: 2024/12/27 16:17:51 by marta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* returns non-zero if character is letter */
+/* returns non-zero int if character is letter */
 
+/* #include <stdio.h> */
 #include "libft.h"
-#include <stdio.h>
 
 int	ft_isalpha(int c)
 {
