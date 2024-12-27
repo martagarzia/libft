@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgarzia <mgarzia@student.42roma.it>        +#+  +:+       +#+        */
+/*   By: marta <marta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 18:18:47 by mgarzia           #+#    #+#             */
-/*   Updated: 2024/12/16 19:26:14 by mgarzia          ###   ########.fr       */
+/*   Updated: 2024/12/27 15:08:42 by marta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/* returns non-zero if character is letter */
+
 #include "libft.h"
-#include <unistd.h>
 #include <stdio.h>
 
 int	ft_isalpha(int c)

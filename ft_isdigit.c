@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgarzia <mgarzia@student.42roma.it>        +#+  +:+       +#+        */
+/*   By: marta <marta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 18:19:34 by mgarzia           #+#    #+#             */
-/*   Updated: 2024/12/16 19:26:17 by mgarzia          ###   ########.fr       */
+/*   Updated: 2024/12/27 15:07:55 by marta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/* returns non-zero if character is digit */
 
 #include "libft.h"
 #include <stdio.h>
@@ -22,10 +24,10 @@ int	ft_isdigit(int c)
 /*
 int	main(void)
 {
-	char	test_char;
+	char	digit;
 
-	test_char = '2';
-	printf("%d\n", ft_isdigit(test_char));
+	digit = '0';
+	printf("%d\n", ft_isdigit(digit));
 	return (0);
 }
 */
