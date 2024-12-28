@@ -6,13 +6,13 @@
 /*   By: marta <marta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 18:18:22 by mgarzia           #+#    #+#             */
-/*   Updated: 2024/12/27 16:18:03 by marta            ###   ########.fr       */
+/*   Updated: 2024/12/28 18:24:01 by marta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* returns non-zero int if the character is alphanumeric*/
 
-/*#include <stdio.h>*/
+/* #include <stdio.h> */
 #include "libft.h"
 
 int	ft_isalnum(int c)

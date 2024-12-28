@@ -6,27 +6,33 @@
 /*   By: marta <marta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 18:19:05 by mgarzia           #+#    #+#             */
-/*   Updated: 2024/12/27 15:31:26 by marta            ###   ########.fr       */
+/*   Updated: 2024/12/28 18:24:08 by marta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/* returns non-zero int if the character is ASCII*/
 
 /* #include <stdio.h> */
 #include "libft.h"
 
 int	ft_isascii(int c)
 {
-	if (c >= 0 && c <= 127)
+	if (c >= 0 && c <= 177)
 		return (1);
 	return (0);
 }
 /*
-int	main(void)
+int main(void)
 {
-	int		c;
-
-    //c = 200; 
-	c = 65;
-	printf("%d\n", ft_isascii(c));
+	char character;
+	
+	//character = 'a';
+	//character = '2';
+	//character = '%';
+	//
+	//character = 200;
+	character = 'è';
+	printf("%d\n", ft_isascii(character));
 	return (0);
 }
 */

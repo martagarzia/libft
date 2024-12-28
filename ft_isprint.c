@@ -3,15 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgarzia <mgarzia@student.42roma.it>        +#+  +:+       +#+        */
+/*   By: marta <marta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 18:19:50 by mgarzia           #+#    #+#             */
-/*   Updated: 2024/12/16 19:48:08 by mgarzia          ###   ########.fr       */
+/*   Updated: 2024/12/28 18:24:17 by marta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/* returns non-zero int 
+if the character is printable ASCII character 
+(digits, uppercase, lowercase, punctuation, space)*/
+
+/* #include <stdio.h */
 #include "libft.h"
-#include <stdio.h>
 
 int	ft_isprint(int c)
 {
@@ -19,16 +23,19 @@ int	ft_isprint(int c)
 		return (1);
 	return (0);
 }
-/*
-int main(void)
-{
-    int c;
 
-    c = 65; 
-    if (ft_isprint(c) == 1)
-        printf("%c 1\n", c);
-    else
-        printf("%c 2\n", c);
-    return (0);
+int	main(void)
+{
+	char	character;
+
+	//character = 'a';
+	//character = 'A';
+	//character = '2';
+	//character = '%';
+	//character = ' ';
+	//
+	//character = 10;
+	character = '\n';
+	printf("%d\n", ft_isprint(character));
+	return (0);
 }
-*/
