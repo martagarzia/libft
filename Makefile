@@ -4,14 +4,13 @@ files = ft_isalpha \
 		ft_isdigit \
 		ft_isalnum \
 		ft_isascii \
-
 		ft_strlen \
+		ft_memset \
 		ft_memmove \
 		ft_memcpy \
 		ft_strlcpy \
 		ft_strlcat \
 		ft_isprint \
-		ft_memset \
 		ft_bzero \
 		ft_toupper \
 		ft_tolower \

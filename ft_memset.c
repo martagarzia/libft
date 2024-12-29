@@ -3,35 +3,42 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgarzia <mgarzia@student.42roma.it>        +#+  +:+       +#+        */
+/*   By: marta <marta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 18:21:07 by mgarzia           #+#    #+#             */
-/*   Updated: 2024/12/16 19:27:18 by mgarzia          ###   ########.fr       */
+/*   Updated: 2024/12/29 19:08:09 by marta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdio.h>
+/* fills  the first n bytes of the memory area 
+pointed to by s 
+with the constant byte c. 
+*/
 
-void	*ft_memset(void *b, int c, size_t len)
+//#include <stdio.h>
+//#include <stddef.h>
+#include "libft.h"
+
+void	*ft_memset(void *ptr, int c, size_t n)
 {
-	unsigned char	*ptr;
+	unsigned char	*dest;
 	size_t			i;
 
-	ptr = (unsigned char *)b;
+	dest = (unsigned char *)ptr;
 	i = 0;
-	while (i < len)
+	while (i < n)
 	{
-		ptr[i] = (unsigned char)c;
+		dest[i] = (unsigned char)c;
 		i++;
 	}
-	return (b);
+	return (ptr);
 }
 /*
 int	main(void)
 {
-	char	buffer[50] = "Dolphins are cool!";
-	ft_memset(buffer, 'A', 5);
+	char	buffer[30] = "Dolphins are cool!";
+	
+	ft_memset(buffer, '%', 5);
 	printf("%s\n", buffer);
 	return (0);
 }

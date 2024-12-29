@@ -6,7 +6,7 @@
 /*   By: marta <marta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 18:19:50 by mgarzia           #+#    #+#             */
-/*   Updated: 2024/12/28 18:24:17 by marta            ###   ########.fr       */
+/*   Updated: 2024/12/28 18:33:01 by marta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_isprint(int c)
 		return (1);
 	return (0);
 }
-
+/*
 int	main(void)
 {
 	char	character;
@@ -39,3 +39,4 @@ int	main(void)
 	printf("%d\n", ft_isprint(character));
 	return (0);
 }
+*/
