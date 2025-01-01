@@ -6,19 +6,25 @@
 /*   By: marta <marta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 18:17:36 by mgarzia           #+#    #+#             */
-/*   Updated: 2024/12/31 00:21:06 by marta            ###   ########.fr       */
+/*   Updated: 2025/01/01 23:20:42 by marta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/* Partendo dall'indirizzo di memoria specificato in str, 
+imposta a zero (0x00) 
+la quantità di byte consecutivi specificata da n. 
+*/
+
+/*#include <stdio.h>*/
 #include "libft.h"
-#include <stdio.h>
+#include <stddef.h>
 
-void	ft_bzero(void *s, size_t n)
+void	ft_bzero(void *str, size_t n)
 {
-	unsigned char	*ptr;
-	size_t			i;
+	size_t	i;
+	char	*ptr;
 
-	ptr = (unsigned char *)s;
+	ptr = (char *)str;
 	i = 0;
 	while (i < n)
 	{
@@ -29,9 +35,10 @@ void	ft_bzero(void *s, size_t n)
 /*
 int	main(void)
 {
-	char	buffer[50] = "Dolphins are cool!";
-	ft_bzero(buffer, 5);
-	printf("%s\n", buffer + 5); // Prints remaining string after 5 bytes.
+	char	string[] = "Dolphins are funny!";
+
+	ft_bzero(string, 3);
+	printf("%s\n", string + 3);
 	return (0);
 }
 */

@@ -6,11 +6,12 @@
 /*   By: marta <marta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 19:27:45 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/01 19:18:56 by marta            ###   ########.fr       */
+/*   Updated: 2025/01/01 23:21:06 by marta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* calcola la lunghezza di una stringa escluso il carattere di terminazione null \0.
+/* calcola la lunghezza di una stringa 
+escluso il carattere di terminazione null \0.
 Riceve come argomento un puntatore a un array di caratteri (const char *).
 
 const char è sola lettura, 
