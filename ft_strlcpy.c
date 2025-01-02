@@ -6,38 +6,50 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 19:27:37 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/02 13:41:51 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/02 17:03:46 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdio.h>
+/* copia da una stringa a un buffer,
+un numero di caratteri massimo a d_size -1,
+perchè aggiunge \0.
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+ritorna lunghezza stringa source.
+*/
+
+// #include <stdio.h>
+#include "libft.h"
+#include <stddef.h>
+
+size_t	ft_strlcpy(char *d, const char *s, size_t d_size)
 {
 	size_t	i;
+	size_t	s_size;
 
-	if (!dst || !src)
-		return (0);
 	i = 0;
-	if (dstsize > 0)
+	s_size = 0;
+	while (s[s_size] != '\0')
+		s_size++;
+	if (d_size > 0)
 	{
-		while (src[i] && i < (dstsize - 1))
+		while (s[i] != '\0' && i < (d_size - 1))
 		{
-			dst[i] = src[i];
+			d[i] = s[i];
 			i++;
 		}
-		dst[i] = '\0';
+		d[i] = '\0';
 	}
-	return (ft_strlen(src));
+	return (s_size);
 }
 /*
 int	main(void)
 {
-	char	dst[20];
-	char	src[] = "Dolphins are cool!";
-	printf("%zu\n", ft_strlcpy(dst, src, 10)); 
-	printf("%s\n", dst);
+	char	buffer_d[10];
+	char	string_s[] = "goldfish";
+
+	//printf("destination before: %s\n", buffer_d);
+	ft_strlcpy(buffer_d, string_s, 5); // 5 - 1
+	printf("destination after: %s\n", buffer_d);
 	return (0);
 }
 */
