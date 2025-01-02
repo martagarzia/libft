@@ -6,12 +6,18 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 18:12:09 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/02 13:42:09 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/02 22:21:30 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/* 
+converte un carattere alfabetico da maiuscolo a minuscolo,
+se è compreso fra 'A' e 'Z',
+altrimenti invariato.
+*/
+
+// #include <stdio.h>
 #include "libft.h"
-#include <stdio.h>
 
 int	ft_tolower(int c)
 {
@@ -25,7 +31,7 @@ int	main(void)
 	int		c;
 	char	*str;
 
-	str = "Dolphins Are Cool";
+	str = "Goldfish And Starfish!";
 	c = 0;
 	while (str[c] != '\0')
 	{
