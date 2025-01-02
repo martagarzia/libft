@@ -6,62 +6,71 @@
 /*   By: marta <marta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 18:20:51 by mgarzia           #+#    #+#             */
-/*   Updated: 2024/12/18 12:51:03 by marta            ###   ########.fr       */
+/*   Updated: 2025/01/02 13:36:27 by marta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/* copia un blocco di memoria da source a destination, 
+se si sovrappongono:
+se destination è dopo source, copia backwards
+se destination è prima di source, copia forward
+byte consecutivi
+*/
+
+// #include <stdio.h>
 #include "libft.h"
 #include <stddef.h>
 
-static void	move_backward(unsigned char *dest,
-	const unsigned char *source, size_t len)
+static void	backwards(char *d,
+	const char *s, size_t n)
 {
 	size_t	i;
 
-	i = len;
+	i = n;
 	while (i > 0)
 	{
 		i--;
-		dest[i] = source[i];
+		d[i] = s[i];
 	}
 }
 
-static void	move_forward(unsigned char *dest,
-	const unsigned char *source, size_t len)
+static void	forward(char *d,
+	const char *s, size_t n)
 {
 	size_t	i;
 
 	i = 0;
-	while (i < len)
+	while (i < n)
 	{
-		dest[i] = source[i];
+		d[i] = s[i];
 		i++;
 	}
 }
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *d, const void *s, size_t n)
 {
-	unsigned char		*dest;
-	const unsigned char	*source;
+	char		*d_ch;
+	const char	*s_ch;
 
-	if (!dst && !src)
-		return (NULL);
-	dest = (unsigned char *)dst;
-	source = (const unsigned char *)src;
-	if (dest > source)
-		move_backward(dest, source, len);
+	d_ch = (char *)d;
+	s_ch = (const char *)s;
+	if (d_ch > s_ch)
+		backwards(d_ch, s_ch, n);
 	else
-		move_forward(dest, source, len);
-	return (dst);
+		forward(d_ch, s_ch, n);
+	return (d);
 }
 /*
 int	main(void)
 {
-	char	*str;
+	char	string_d[] = "starfish";
+	char	string_s[] = "goldfish";
 
-	str = "Dolphins are cool!";
-	ft_memmove(str + 9, str, 9);
-	printf("%s\n", str);
+	printf("destination before: %s\n", string_d);
+	ft_memmove(string_d, string_s, 4);
+	// ft_memmove(string_d, string_s, 0);
+	// ft_memmove(NULL, string_s, 4); //segmentation fault (can't access memory)
+	printf("destination after: %s\n", string_d);
 	return (0);
 }
 */
