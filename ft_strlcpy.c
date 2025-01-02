@@ -6,7 +6,7 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 19:27:37 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/02 17:03:46 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/02 18:37:47 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,12 @@ size_t	ft_strlcpy(char *d, const char *s, size_t d_size)
 /*
 int	main(void)
 {
-	char	buffer_d[10];
-	char	string_s[] = "goldfish";
+	char	d_buffer[10];
+	char	s_string[] = "goldfish";
 
-	//printf("destination before: %s\n", buffer_d);
-	ft_strlcpy(buffer_d, string_s, 5); // 5 - 1
-	printf("destination after: %s\n", buffer_d);
+	//printf("destination before: %s\n", d_buffer);
+	ft_strlcpy(d_buffer, s_string, 5); // 5 - 1
+	printf("destination after: %s\n", d_buffer);
 	return (0);
 }
 */
