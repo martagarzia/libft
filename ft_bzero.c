@@ -6,13 +6,16 @@
 /*   By: marta <marta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 18:17:36 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/01 23:20:42 by marta            ###   ########.fr       */
+/*   Updated: 2025/01/02 01:11:54 by marta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* Partendo dall'indirizzo di memoria specificato in str, 
 imposta a zero (0x00) 
 la quantità di byte consecutivi specificata da n. 
+
+cominciamo da +3 perchè \0 è fine stringa, 
+quindi printf smette di stampare
 */
 
 /*#include <stdio.h>*/

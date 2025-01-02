@@ -6,39 +6,46 @@
 /*   By: marta <marta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 12:30:00 by marta             #+#    #+#             */
-/*   Updated: 2024/12/18 12:30:44 by marta            ###   ########.fr       */
+/*   Updated: 2025/01/02 01:16:19 by marta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/* 
+char * = point to series of characters (string)
+void * = point to any type but can't access or modify
+
+const = can't be modified
+*/
+
+// #include <stdio.h>
 #include "libft.h"
-#include <stdio.h>
+#include <stddef.h>
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	unsigned char		*dest;
-	const unsigned char	*source;
-	size_t				i;
+	size_t		i;
+	char		*dest_ch;
+	const char	*src_ch;
 
-	if (!dst && !src)
-		return (NULL);
-	dest = (unsigned char *)dst;
-	source = (const unsigned char *)src;
+	src_ch = (const char *)src;
+	dest_ch = (char *)dest;
 	i = 0;
 	while (i < n)
 	{
-		dest[i] = source[i];
+		dest_ch[i] = src_ch[i];
 		i++;
 	}
-	return (dst);
+	return (dest);
 }
 /*
 int	main(void)
 {
-	char	src[] = "Dolphins are cool!";
-	char	dst[50];
+	char	string_d[] = "starfish";
+	char	string_s[] = "goldfish";
 
-	ft_memcpy(dst, src, 19);
-	printf("%s\n", dst); // Output: "Dolphins are cool!"
+	printf("destination before: %s\n", string_d);
+	ft_memcpy(string_d, string_s, 4);
+	printf("destination after: %s\n", string_d);
 	return (0);
 }
 */
