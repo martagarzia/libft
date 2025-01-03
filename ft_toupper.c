@@ -6,7 +6,7 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 19:32:23 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/02 22:19:37 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/03 20:33:19 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ altrimenti invariato.
 
 // #include <stdio.h>
 #include "libft.h"
-
 
 int	ft_toupper(int c)
 {

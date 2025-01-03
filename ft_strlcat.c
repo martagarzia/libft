@@ -6,39 +6,87 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 19:27:30 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/02 13:41:49 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/03 21:20:39 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdio.h>
+/* 
+concatena una stringa source a una stringa destination.
+Calcola la lunghezza iniziale della stringa in d fino a '\0'.
+copia i caratteri di source in destination,
+fino a raggiungere lo spazio massimo del buffer (d_size)
+*/
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+//#include <stdio.h>
+#include "libft.h"
+#include <stddef.h>
+/*
+size_t	ft_strlen(const char *str)
 {
+	size_t	len;
+
+	len = 0;
+	while (str[len] != '\0')
+	{
+		len++;
+	}
+	return (len);
+}
+*/
+size_t	ft_strlcat(char *d, const char *s, size_t d_size)
+{
+	size_t	i;
 	size_t	d_len;
 	size_t	s_len;
-	size_t	i;
 
-	d_len = ft_strlen(dst);
-	s_len = ft_strlen(src);
-	if (dstsize <= d_len)
-		return (dstsize + s_len);
 	i = 0;
-	while (src[i] && (d_len + i < dstsize - 1))
+	d_len = ft_strlen(d);
+	s_len = ft_strlen(s);
+	if (d_size <= d_len)
+		return (d_size + s_len);
+	while (s[i] && (d_len + i < d_size - 1))
 	{
-		dst[d_len + i] = src[i];
+		d[d_len + i] = s[i];
 		i++;
 	}
-	dst[d_len + i] = '\0';
+	d[d_len + i] = '\0';
 	return (d_len + s_len);
 }
 /*
-int	main(void)
+int main(void)
 {
-	char	dst[30] = "Dolphins";
-	char	src[] = " are cool!";
-	printf("%zu\n", ft_strlcat(dst, src, 20)); 
-	printf("%s\n", dst);
+	char d_str[30] = "Starfish"; //specify buffer size to avoid buffer overflow
+	char s_str[] = " and Goldfish! Goose";
+	size_t total_lenght;
+
+	printf("d_str before: %s\n", d_str);
+	// %zu expects size_t argument
+	// sizeof: entire allocated memory (characters + '\0')
+	printf("d_str size: %zu\n", sizeof(d_str));
+	// ft_strlen: characters (no '\0')
+	printf("d_str length: %zu\n", ft_strlen(d_str));
+
+	printf("\n");
+	printf("s_str before: %s\n", s_str);
+	printf("s_str size: %zu\n", sizeof(s_str));
+	printf("s_str length: %zu\n", ft_strlen(s_str));
+
+
+	// d_str is a pointer to the first element of the array
+	total_lenght = ft_strlcat(d_str, s_str, 30);
+	printf("\n");
+	printf("Total lenght needed: %zu\n", total_lenght);
+
+	printf("\n");
+	printf("d_str after: %s\n", d_str);
+	printf("d_str size: %zu\n", sizeof(d_str));
+	printf("d_str length: %zu\n", ft_strlen(d_str));
+
+	printf("\n");
+	printf("s_str after: %s\n", s_str);
+	printf("s_str size: %zu\n", sizeof(s_str));
+	printf("s_str length: %zu\n", ft_strlen(s_str));
+
 	return (0);
 }
 */

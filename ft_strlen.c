@@ -6,7 +6,7 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 19:27:45 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/02 16:56:15 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/03 17:30:12 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ const char è sola lettura,
 le stringhe letterali sono allocate in una memoria di sola lettura.
 */
 
-/* #include <stdio.h> */
+// #include <stdio.h>
 #include "libft.h"
 #include <stddef.h>
 
