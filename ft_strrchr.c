@@ -6,33 +6,59 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 19:28:03 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/02 13:42:02 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/05 14:44:49 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/* 
+scasiona *str carattere per carattere (compreso '\0')
+cerca l'ultima volta in cui appare c
+calcola la lunghezza della stringa e poi cerca dalla fine
+
+se lo trova, ritorna puntatore all' indirizzo del carattere
+se non trova, puntatore all'indirizzo di '\0' = NULL.
+
+(char)c fa un "cast" di c da int in char = 
+dice di cosiderare momentaneamente c come char invece di int.
+
+&str[i] ci fornisce l'indirizzo di memoria del carattere str[i].
+(char *) trasforma str da 'const char' a 'char',
+	perchè la funzione dve ritornare un char *, che può essere modificato.
+	se però str è effettivamente 'const' (definita in memoria di sola lettura) 
+		tentare di modificarla ritornerebbe "runtime error".
+*/
+
+// #include <stdio.h>
 #include "libft.h"
-#include <stdio.h>
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *str, int c)
 {
-	const char	*last = NULL;
+	int	i;
 
-	while (*s)
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	while (i >= 0)
 	{
-		if (*s == (char)c)
-			last = s;
-		s++;
+		if (str[i] == (char)c)
+			return ((char *)&str[i]);
+		i--;
 	}
-	if (c == '\0')
-		return ((char *)s);
-	return ((char *)last);
+	return (NULL);
 }
 /*
-int	main(void)
+int main(void)
 {
-	char	str[] = "Dolphins are cool!";
-	printf("%s\n", ft_strrchr(str, 'o')); 
-	printf("%s\n", ft_strrchr(str, 'z'));
+	char string[] = "Penguin";
+	// char string[] = "Pengui";
+	char *search;
+
+	search = ft_strrchr(string, 'n'); 
+	// search = ft_strrchr(string, 'z'); 
+	if (search != NULL)
+		printf("%s\n", search);
+	else
+		printf("NULL\n");
 	return (0);
 }
 */
