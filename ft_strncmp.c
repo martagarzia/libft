@@ -6,22 +6,45 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 19:28:20 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/02 13:41:58 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/05 15:46:52 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdio.h>
+/*
+confronta str1 con str2 fino a massimo n caratteri.
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+Si interrompe se:
+- raggiunge n caratteri
+- trova una carattere diverso nelle due stringhe.
+- incontra '\0'
+
+ritorna
+-1 (negative value) se str1[i] < str2[i]
+0 se tutti i caratteri delle due stringhe fino ad n sono uguali, 
+	o si incontra '\0' allo stesso punto (hanno stessa lunghezza)
+1 (positive value) se str1[i] > str2[i]
+*/
+
+// #include <stdio.h>
+#include "libft.h"
+#include <stddef.h>
+
+int	ft_strncmp(const char *str1, const char *str2, size_t n)
 {
 	size_t	i;
 
 	i = 0;
-	while (i < n && (s1[i] || s2[i]))
+	if (n == 0)
+		return (0);
+	while (i < n && (str1[i] != '\0' || str2[i] != '\0'))
 	{
-		if ((unsigned char)s1[i] != (unsigned char)s2[i])
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		if (str1[i] != str2[i])
+		{
+			if ((unsigned char)str1[i] < (unsigned char)str2[i])
+				return (-1);
+			else
+				return (1);
+		}
 		i++;
 	}
 	return (0);
@@ -29,8 +52,17 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 /*
 int	main(void)
 {
-	printf("%d\n", ft_strncmp("Dolphins", "Dolphins are cool!", 8)); 
-	printf("%d\n", ft_strncmp("Dolphins", "Dolphin", 8)); 
+	const char	string1[] = "sunrise";
+	const char	string2[] = "sunburn";
+	// printf("%d\n", ft_strncmp(string1, string2, 3)); // same 3 = 0
+	printf("%d\n", ft_strncmp(string1, string2, 7)); // r > b = 1.
+	// printf("%d\n", ft_strncmp(string1, string2, 10)); // end before n = 0
+
+
+	// const char	string1[] = "sunburn";
+	// const char	string2[] = "sunrise";
+	// printf("%d\n", ft_strncmp(string1, string2, 7)); // b < r = -1.
+
 	return (0);
 }
 */
