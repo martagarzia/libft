@@ -6,26 +6,52 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 19:28:11 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/02 13:42:00 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/05 23:26:15 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// #include <stdio.h>
 #include "libft.h"
-#include <stdio.h>
-
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+#include <stddef.h>
+/*
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t	n_len;
 	size_t	i;
 
-	if (!*needle)
-		return ((char *)haystack);
-	n_len = ft_strlen(needle);
 	i = 0;
-	while (haystack[i] && i + n_len <= len)
+	while (i < n && (s1[i] || s2[i]))
 	{
-		if (ft_strncmp(&haystack[i], needle, n_len) == 0)
-			return ((char *)&haystack[i]);
+		if (s1[i] != s2[i])
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		i++;
+	}
+	return (0);
+}
+*/
+/*
+size_t	ft_strlen(const char *str)
+{
+	size_t	l;
+
+	l = 0;
+	while (str[l] != '\0')
+		l++;
+	return (l);
+}
+*/
+char	*ft_strnstr(const char *src, const char *sub, size_t n)
+{
+	size_t	i;
+	size_t	sub_l;
+
+	i = 0;
+	sub_l = ft_strlen(sub);
+	if (sub[0] == '\0')
+		return ((char *)src);
+	while ((i < n) && (i + sub_l <= n))
+	{
+		if (ft_strncmp(&src[i], sub, sub_l) == 0)
+			return ((char *)&src[i]);
 		i++;
 	}
 	return (NULL);
@@ -33,10 +59,21 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 /*
 int	main(void)
 {
-	char	haystack[] = "Dolphins are cool!";
-	char	needle[] = "are";
-	printf("%s\n", ft_strnstr(haystack, needle, 19));
-	printf("%s\n", ft_strnstr(haystack, "z", 19));
+	char	*found;
+
+	char	source_string[] = "firefighters";
+
+	// char	substring[] = "fire";
+	// char	substring[] = "cat";
+	// found = (ft_strnstr(source_string, substring, 7));
+
+	char	substring[] = "fighter";
+	found = (ft_strnstr(source_string, substring, 14));
+
+	if (found != NULL)
+		printf("%s\n", found);
+	else
+		printf("%p\n", found);
 	return (0);
 }
 */
