@@ -6,13 +6,13 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 19:28:11 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/05 23:26:15 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/06 21:57:56 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include <stdio.h>
 #include "libft.h"
-#include <stddef.h>
+#include <stddef.h> // size_t
 /*
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

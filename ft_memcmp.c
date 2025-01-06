@@ -6,7 +6,7 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 18:20:25 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/05 19:24:09 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/06 21:58:17 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ restituisce
 
 // #include <stdio.h>
 #include "libft.h"
-#include <stddef.h>
+#include <stddef.h> // size_t
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

@@ -6,7 +6,7 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 18:21:07 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/06 12:00:11 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/06 22:03:50 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ che rappresenta l'inizio dell'area di memoria modificata.
 
 //#include <stdio.h>
 #include "libft.h"
-#include <stddef.h>
+#include <stddef.h> // size_t
 
 void	*ft_memset(void *ptr, int c, size_t n)
 {

@@ -6,7 +6,7 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 19:27:30 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/06 00:02:58 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/06 22:00:41 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ fino a raggiungere lo spazio massimo del buffer (d_size)
 
 //#include <stdio.h>
 #include "libft.h"
-#include <stddef.h>
+#include <stddef.h> // size_t
 /*
 size_t	ft_strlen(const char *str)
 {

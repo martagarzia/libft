@@ -6,7 +6,7 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 18:20:09 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/05 18:24:54 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/06 21:58:51 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ in questo caso i è 3 perchè dopo 3 iterazioni i == c.
 
 // #include <stdio.h>
 #include "libft.h"
-#include <stddef.h>
+#include <stddef.h> // size_t
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

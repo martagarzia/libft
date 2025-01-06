@@ -6,7 +6,7 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 13:47:01 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/06 20:31:45 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/06 22:27:44 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,15 +43,13 @@ size_t	ft_strlen(char const *s)
 */
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	s1_lenght;
-	size_t	s2_lenght;
 	char	*ptr_concat;
 	int		i1;
 	int		i2;
 
 	i1 = 0;
 	i2 = 0;
-	ptr_concat = malloc((ft_strlen(s1) + ft_strlen(s2)) * sizeof(char));
+	ptr_concat = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
 	if (ptr_concat == NULL)
 		return (NULL);
 	while (s1[i1] != '\0')

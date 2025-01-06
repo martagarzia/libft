@@ -6,7 +6,7 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 19:28:20 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/05 15:46:52 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/06 21:59:10 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ ritorna
 
 // #include <stdio.h>
 #include "libft.h"
-#include <stddef.h>
+#include <stddef.h> // size_t
 
 int	ft_strncmp(const char *str1, const char *str2, size_t n)
 {

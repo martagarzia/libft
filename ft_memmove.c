@@ -6,7 +6,7 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 18:20:51 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/02 13:50:02 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/06 22:01:56 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ byte consecutivi
 
 // #include <stdio.h>
 #include "libft.h"
-#include <stddef.h>
+#include <stddef.h> // size_t
 
 static void	backwards(char *d,
 	const char *s, size_t n)

@@ -6,7 +6,7 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 19:27:37 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/02 18:37:47 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/06 22:01:05 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ ritorna lunghezza stringa source.
 
 // #include <stdio.h>
 #include "libft.h"
-#include <stddef.h>
+#include <stddef.h> // size_t
 
 size_t	ft_strlcpy(char *d, const char *s, size_t d_size)
 {

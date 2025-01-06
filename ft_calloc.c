@@ -6,7 +6,7 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 18:17:51 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/06 12:53:47 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/06 21:56:47 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ memset:
 // #include <stdio.h>
 // #include <stdint.h> // SIZE_MAX
 #include "libft.h"
-#include <stddef.h>
-#include <stdlib.h>
+// #include <stddef.h> // size_t
+#include <stdlib.h> // malloc, size_t
 /*
 void	*ft_memset(void *ptr, int c, size_t n)
 {

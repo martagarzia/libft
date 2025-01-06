@@ -6,7 +6,7 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 13:45:38 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/02 13:45:57 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/06 22:02:26 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ const = can't be modified
 
 // #include <stdio.h>
 #include "libft.h"
-#include <stddef.h>
+#include <stddef.h> // size_t
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

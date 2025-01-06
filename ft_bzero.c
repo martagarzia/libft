@@ -6,7 +6,7 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 18:17:36 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/02 13:40:56 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/06 22:03:00 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ cominciamo da +3 perchè \0 è fine stringa,
 quindi printf smette di stampare
 */
 
-/*#include <stdio.h>*/
+// #include <stdio.h>
 #include "libft.h"
-#include <stddef.h>
+#include <stddef.h> // size_t
 
 void	ft_bzero(void *str, size_t n)
 {
