@@ -6,7 +6,7 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 13:47:35 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/06 17:45:37 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/06 17:49:28 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	ptr_sub = malloc(len + 1);
 	if (ptr_sub == NULL)
 		return (NULL);
-	while (1 < len && s[start + i] != '\0')
+	while (i < len && s[start + i] != '\0')
 	{
 		ptr_sub[i] = s[start + i];
 		i++;
