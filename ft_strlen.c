@@ -6,7 +6,7 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 19:27:45 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/06 15:38:14 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/06 15:41:08 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ le stringhe letterali sono allocate in una memoria di sola lettura.
 
 // #include <stdio.h>
 #include "libft.h"
-#include <stddef.h>
+#include <stddef.h> // size_t
 
 size_t	ft_strlen(const char *str)
 {

@@ -6,7 +6,7 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 18:26:13 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/06 15:37:41 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/06 16:51:06 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ free(string_duplicate) = evita memory leak
 
 // #include <stdio.h> // printf
 #include "libft.h"
-#include <stdlib.h> // malloc
+#include <stdlib.h> // malloc, size_t
 #include <stdint.h> // SIZE_MAX
 /*
 size_t	ft_strlen(const char *str)
