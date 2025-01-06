@@ -6,7 +6,7 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 13:45:01 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/06 11:49:57 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/06 12:54:52 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stdio.h>
 # include <unistd.h>
-// # include <stdlib.h> // ft_calloc, ft_strdup (malloc)
+# include <stdlib.h> // ft_calloc, ft_strdup (malloc)
 //# include <stddef.h> // (size_t)
 
 int		ft_isalpha(int c);
