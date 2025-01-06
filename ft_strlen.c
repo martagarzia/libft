@@ -6,15 +6,16 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 19:27:45 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/03 17:30:12 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/06 15:38:14 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* calcola la lunghezza di una stringa 
+/* 
+calcola la lunghezza di una stringa 
 escluso il carattere di terminazione null \0.
 Riceve come argomento un puntatore a un array di caratteri (const char *).
 
-const char è sola lettura, 
+const char perchè sola lettura, 
 le stringhe letterali sono allocate in una memoria di sola lettura.
 */
 
