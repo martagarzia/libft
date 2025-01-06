@@ -6,51 +6,80 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 13:47:01 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/02 13:47:02 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/06 20:31:45 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdio.h>
+/*
+	strjoin
+	Concatena le stringhe s1 e s2, 
+	allocando dinamicamente una nuova stringa con malloc.
+	ritorna:
+	- se allocato: puntatore alla nuova stringa concatenata
+	- se non allocato: NULL
 
-char	*ft_strjoin(char const *s1, char const *s2)
+	strlen
+	size_t strlen(const char *s);
+
+	malloc
+	void *malloc( size_t size );
+*/
+
+// #include <stdio.h>
+#include "libft.h"
+#include <stdlib.h> // malloc, size_t
+/*
+size_t	ft_strlen(char const *s)
 {
-	int		i;
-	int		j;
-	char	*str;
+	size_t	i;
 
 	i = 0;
-	j = 0;
-	str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-	if (str == NULL)
-		return (NULL);
-	while (s1[i] != '\0')
+	while (s[i] != '\0')
 	{
-		str[i] = s1[i];
 		i++;
 	}
-	while (s2[j] != '\0')
+	return (i);
+}
+*/
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	size_t	s1_lenght;
+	size_t	s2_lenght;
+	char	*ptr_concat;
+	int		i1;
+	int		i2;
+
+	i1 = 0;
+	i2 = 0;
+	ptr_concat = malloc((ft_strlen(s1) + ft_strlen(s2)) * sizeof(char));
+	if (ptr_concat == NULL)
+		return (NULL);
+	while (s1[i1] != '\0')
 	{
-		str[i + j] = s2[j];
-		j++;
+		ptr_concat[i1] = s1[i1];
+		i1++;
 	}
-	str[i + j] = '\0';
-	return (str);
+	while (s2[i2] != '\0')
+	{
+		ptr_concat[i1 + i2] = s2[i2];
+		i2++;
+	}
+	ptr_concat[i1 + i2] = '\0';
+	return (ptr_concat);
 }
 /*
-int main(void)
+int	main(void)
 {
-    char    *str1;
-    char    *str2;
-    char    *result;
+	char const	*string1 = "star";
+	char const	*string2 = "fish";
+	char	*concatenated;
 
-    str1 = "Dolphins";
-    str2 = " are cool";
-    result = ft_strjoin(str1, str2);
-    if (result == NULL)
-        return (1);
-    printf("%s\n", result);
-    free(result);
-    return (0);
+	concatenated = ft_strjoin(string1, string2); // strjoin restitusice ptr
+	if (concatenated == NULL)
+		printf("NULL");
+	else
+		printf("%s\n", concatenated);
+	free(concatenated);
+	return (0);
 }
 */
