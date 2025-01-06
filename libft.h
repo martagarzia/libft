@@ -6,7 +6,7 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 13:45:01 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/06 00:49:10 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/06 11:49:57 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 # define LIBFT_H
 
 # include <stdio.h>
-# include <stdlib.h>
 # include <unistd.h>
-//# include <stddef.h>
+// # include <stdlib.h> // ft_calloc, ft_strdup (malloc)
+//# include <stddef.h> // (size_t)
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -38,8 +38,8 @@ int		ft_strncmp(const char *str1, const char *str2, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(const char *src, const char *sub, size_t n);
+int		ft_atoi(const char *s);
 
-int		ft_atoi(const char *str);
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s1);
 

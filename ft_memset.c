@@ -6,18 +6,20 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 18:21:07 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/02 13:41:27 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/06 12:00:11 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* fills  the first n bytes of the memory area 
-pointed to by s 
-with the constant byte c. 
+/* 
+imposta n byte di un'area di memoria a un valore specificato c.
+
+Restituisce il puntatore ptr, 
+che rappresenta l'inizio dell'area di memoria modificata.
 */
 
 //#include <stdio.h>
-//#include <stddef.h>
 #include "libft.h"
+#include <stddef.h>
 
 void	*ft_memset(void *ptr, int c, size_t n)
 {
