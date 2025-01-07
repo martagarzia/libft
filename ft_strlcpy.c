@@ -6,11 +6,12 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 19:27:37 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/06 22:01:05 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/07 11:11:21 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* copia da una stringa a un buffer,
+/* 
+copia da una stringa a un buffer,
 un numero di caratteri massimo a d_size -1,
 perchè aggiunge \0.
 

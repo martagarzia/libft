@@ -6,7 +6,7 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 13:45:01 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/06 22:17:53 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/07 11:32:17 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 # include <stdio.h>
 # include <unistd.h>
-# include <stdlib.h> // ft_calloc, ft_strdup (malloc, size_t)
-//# include <stddef.h> // (size_t)
+# include <stdlib.h> // malloc, size_t, NULL
+// # include <stddef.h> // size_t, NULL
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -43,8 +43,8 @@ void	*ft_calloc(size_t n, size_t size);
 char	*ft_strdup(const char *s_s);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s1, char const *s2);
 
-char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *str, char c);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));

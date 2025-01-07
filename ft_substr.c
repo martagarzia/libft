@@ -6,9 +6,13 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 13:47:35 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/06 17:49:28 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/06 22:36:10 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+Estrae una sottostringa (substring) da una stringa (s).
+*/
 
 // #include <stdio.h> // printf
 #include "libft.h"
