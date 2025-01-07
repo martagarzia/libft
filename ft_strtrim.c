@@ -6,7 +6,7 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 13:47:28 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/07 11:29:12 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/07 11:43:24 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ void *malloc( size_t size );
 
 */
 
-// #include <stdio.h>
+// #include <stdio.h> // printf
 #include "libft.h"
-#include <stdlib.h> // malloc, size_t, NULL
+#include <stdlib.h> // malloc, size_t, NULL, free
 /*
 size_t	ft_strlen(const char *str)
 {

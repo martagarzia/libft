@@ -6,85 +6,100 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 13:46:38 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/02 13:46:39 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/07 22:13:03 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+split
+divide stringa s ogni volta che trova c
+alloca memoria per le stringhe, terminando ognuna con \0
+alloca memoria per l'array che contiene i puntatori 
+	al primo carattere di ogni stringa + ultimo puntatore è NULL.
+
+ritorna:
+- successo = array di puntatori a sottostringhe,
+	l'ultimo elemento dell'array è un puntatote NULL
+- fallisce = NULL
+
+**split = perchè è un puntatore a un array di puntatori
+
+malloc
+void *malloc(size_t size);
+
+0 = true
+1 = false
+
+char = 1 byte (8 bit)
+char * = 4 byte
+*/
+
+// #include <stdio.h> // printf
 #include "libft.h"
-#include <stdio.h>
+#include <stdlib.h> // malloc, free, NULL
 
-static void	ft_freeup(char *strs)
+size_t	count_substrings(char const *s, char c)
 {
-	int	i;
+	int		i;
+	int		string_start;
+	size_t	len;
 
 	i = 0;
-	while (strs[i] != '\0')
+	string_start = 0;
+	len = 0;
+	while (s[i] != '\0')
 	{
-		free(strs);
-		i++;
-	}
-	free(strs);
-}
-
-static int	ft_wordcount(char *str, char c)
-{
-	int	i;
-	int	word;
-
-	i = 0;
-	word = 0;
-	while (str[i] != '\0')
-	{
-		if (str[i] != c)
+		if (s[i] == c)
+			string_start = 0;
+		else if (s[i] != c && string_start == 0)
 		{
-			word++;
-			while (str[i] != c && str[i] != '\0')
-				i++;
-			if (str[i] == '\0')
-				return (word);
+			string_start = 1;
+			len++;
 		}
 		i++;
 	}
-	return (word);
+	return (len);
 }
 
-static void	ft_strcpy(char *word, char *str, char c, int j)
-{
-	int	i;
-
-	i = 0;
-	while (str[j] != '\0' && str[j] == c)
-		j++;
-	while (str[j + i] != c && str[j + i] != '\0')
-	{
-		word[i] = str[j + i];
-		i++;
-	}
-	word[i] = '\0';
-}
-
-static char	*ft_stralloc(char *str, char c, int *k)
+char	*ft_allocate(const char *str, char c, int *pos)
 {
 	char	*word;
-	int		j;
+	int		start;
+	int		len;
+	int		i;
 
-	j = *k;
-	word = NULL;
-	while (str[*k] != '\0')
+	while (str[*pos] == c && str[*pos] != '\0')
+		(*pos)++;
+	start = *pos;
+	while (str[*pos] != c && str[*pos] != '\0')
+		(*pos)++;
+	len = *pos - start;
+	word = (char *)malloc(sizeof(char) * (len + 1));
+	if (word == NULL)
+		return (NULL);
+	i = 0;
+	while (i < len)
 	{
-		if (str[*k] != c)
-		{
-			while (str[*k] != '\0' && str[*k] != c)
-				*k += 1;
-			word = (char *)malloc(sizeof(char) * (*k + 1));
-			if (word == NULL)
-				return (NULL);
-			break ;
-		}
-		*k += 1;
+		word[i] = str[start + i];
+		i++;
 	}
-	ft_strcpy(word, str, c, j);
+	word[len] = '\0';
 	return (word);
+}
+
+void	ft_free(char **split)
+{
+	size_t	i;
+
+	i = 0;
+	if (split == NULL)
+		return ;
+	while (split[i] != NULL)
+	{
+		free(split[i]);
+		i++;
+	}
+	free(split);
 }
 
 char	**ft_split(char const *str, char c)
@@ -96,46 +111,43 @@ char	**ft_split(char const *str, char c)
 
 	if (str == NULL)
 		return (NULL);
-	i = 0;
 	pos = 0;
-	j = ft_wordcount((char *)str, c);
+	j = count_substrings(str, c);
 	strs = (char **)malloc(sizeof(char *) * (j + 1));
 	if (strs == NULL)
 		return (NULL);
 	strs[j] = NULL;
+	i = 0;
 	while (i < j)
 	{
-		strs[i] = ft_stralloc(((char *)str), c, &pos);
+		strs[i] = ft_allocate(str, c, &pos);
 		if (strs[i] == NULL)
 		{
-			ft_freeup(strs[i]);
+			ft_free(strs);
+			return (NULL);
 		}
 		i++;
 	}
 	return (strs);
 }
 /*
-int main(void)
+int	main(void)
 {
-    char *str;
-    char **result;
-    int i;
+	char *string_source = "2 apples,1 banana,1 rosetta and 1 ciabatta";
+	char cleft = ',';
+	char **result;
+	int i = 0;
 
-    str = "Dolphins are cool";
-    result = ft_split(str, ' ');
-    if (!result)
-    {
-        printf("Memory allocation failed.\n");
-        return (1);
-    }
-    i = 0;
-    while (result[i] != NULL)
-    {
-        printf("Word %d: %s\n", i, result[i]);
-        free(result[i]);
-        i++;
-    }
-    free(result);
-    return (0);
+	result = ft_split(string_source, cleft);
+	if (result != NULL)
+	{
+		while (result[i] != NULL)
+		{
+			printf("%s\n", result[i]);
+			i++;
+		}
+		ft_free(result);
+	}
+	return (0);
 }
 */
