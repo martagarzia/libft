@@ -6,81 +6,102 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 13:45:25 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/02 13:46:01 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/08 14:12:28 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+itoa
+Converte un numero int in una stringa (char *).
+- determina lunghezza della stringa che rappresenterà n
+	(numeri e segni positivi e negativi)
+- alloca con malloc() memoria per la stringa
+- se n è negativo mette il segno come primo carattere
+- converte ciascuna cifra di n e la mette nella stringa
+	nell'ordine: unità, decine, centinaia, ...
+	usa modulo
+- aggiunge \0 alla fine della stringa
+ritorna:
+- se alloca: puntatore alla stringa che rappresenta n
+- se non alloca: NULL
+
+static char function_name = 
+	per non permettere ad altre funzioni nel programma di potere utilizzarla
+*/
+
+// #include <stdio.h> // printf
 #include "libft.h"
-#include <stdlib.h>
-#include <stdio.h>
+#include <stdlib.h> // malloc, free, NULL, size_t
+#include <limits.h> // INT_MIN
 
-static unsigned int	ft_number_size(int number)
+size_t	ft_lenght(int n)
 {
-	unsigned int	length;
+	size_t	len;
 
-	length = 0;
-	if (number == 0)
-		return (1);
-	if (number < 0)
-		length++;
-	while (number != 0)
+	len = 0;
+	if (n == 0)
+		len++;
+	if (n < 0)
+		len++;
+	while (n != 0)
 	{
-		number /= 10;
-		length++;
+		n /= 10;
+		len++;
 	}
-	return (length);
+	return (len);
 }
 
-static char	*ft_convert_to_string(int n, unsigned int length)
+static char	*ft_string(long n_long, size_t len)
 {
-	char			*string;
-	unsigned int	number;
+	char	*alloc;
 
-	string = (char *)malloc(sizeof(char) * (length + 1));
-	if (!string)
+	alloc = (char *)malloc((len + 1) * sizeof(char));
+	if (alloc == NULL)
 		return (NULL);
-	string[length] = '\0';
-	if (n < 0)
+	alloc[len] = '\0';
+	if (n_long < 0)
 	{
-		string[0] = '-';
-		number = -n;
+		alloc[0] = '-';
+		n_long *= -1;
 	}
-	else
-		number = n;
-	while (number > 0)
+	if (n_long == 0)
 	{
-		string[--length] = (number % 10) + '0';
-		number /= 10;
+		len--;
+		alloc[len] = '0';
 	}
-	return (string);
+	while (n_long > 0)
+	{
+		len--;
+		alloc[len] = (n_long % 10) + '0';
+		n_long /= 10;
+	}
+	return (alloc);
 }
 
 char	*ft_itoa(int n)
 {
-	char			*string;
-	unsigned int	length;
+	size_t	len;
+	char	*string;
+	long	n_long;
 
-	if (n == 0)
-	{
-		string = (char *)malloc(sizeof(char) * 2);
-		if (!string)
-			return (NULL);
-		string[0] = '0';
-		string[1] = '\0';
-		return (string);
-	}
-	length = ft_number_size(n);
-	string = ft_convert_to_string(n, length);
+	n_long = n;
+	len = (ft_lenght(n));
+	string = ft_string(n_long, len);
 	return (string);
 }
 /*
 int	main(void)
 {
-	char	*result;
+	char	*string;
 
-	result = ft_itoa(-42);
-	printf("ft_itoa: %s\n", result);
-	free(result);
+	string = ft_itoa(2);
+	// string = ft_itoa(0);
+	// string = ft_itoa(-42);
+	// string = ft_itoa(12345);
+	// string = ft_itoa(INT_MIN);
+
+	printf("%s\n", string);
+	free(string);
 	return (0);
 }
 */

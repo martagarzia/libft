@@ -6,7 +6,7 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 13:46:38 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/07 22:13:03 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/08 09:43:23 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char * = 4 byte
 
 // #include <stdio.h> // printf
 #include "libft.h"
-#include <stdlib.h> // malloc, free, NULL
+#include <stdlib.h> // malloc, free, NULL, size_t
 
 size_t	count_substrings(char const *s, char c)
 {

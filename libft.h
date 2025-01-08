@@ -6,7 +6,7 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 13:45:01 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/07 11:32:17 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/08 15:04:39 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stdio.h>
 # include <unistd.h>
-# include <stdlib.h> // malloc, size_t, NULL
+# include <stdlib.h> // malloc, free, NULL, size_t
 // # include <stddef.h> // size_t, NULL
 
 int		ft_isalpha(int c);
@@ -44,9 +44,9 @@ char	*ft_strdup(const char *s_s);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *s2);
-
 char	**ft_split(char const *str, char c);
 char	*ft_itoa(int n);
+
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 void	ft_putchar_fd(char c, int fd);

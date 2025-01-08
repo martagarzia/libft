@@ -6,7 +6,7 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 18:17:14 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/06 11:23:00 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/08 09:43:36 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ perchè permettere di utiliazzare numeri più grandi,
 evitando overflow.
 */
 
-// #include <stdio.h>
+// #include <stdio.h> // printf
 #include "libft.h"
 
 int	ft_atoi(const char *s)

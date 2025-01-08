@@ -6,7 +6,7 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 18:17:51 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/06 21:56:47 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/08 10:50:41 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 implement using malloc()
 
 calloc
+alloca dinamicamente memoria, che viene inizializzata a zero.
 - moltiplica n * size, per determinare il numero di byte da allocare
 - passa questa dimensione a malloc per cercare nell'heap (memoria)
 	un blocco di memoria contiguo
