@@ -6,22 +6,36 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 13:46:32 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/02 13:46:32 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/08 19:57:46 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <unistd.h>
+/*
+putchar
+lo stampa una stringa s,
+sul file descriptor fd specificato 
+	(1 = stampa "a video" sul terminale)
+ritorna:
+nulla, tipo void.
+*/
+
+// #include "libft.h"
+#include <unistd.h> // write
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	while (s && *s)
-		write(fd, s++, 1);
+	while ((s != NULL) && (*s != '\0'))
+	{
+		write(fd, s, 1);
+		s++;
+	}
 }
 /*
 int	main(void)
 {
-	ft_putstr_fd("Dolphins are cool\n", 1);
-	return (0);
+	char	*string;
+
+	string = "I want a seagull\n";
+	ft_putstr_fd(string, 1);
 }
 */
