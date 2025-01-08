@@ -6,7 +6,7 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 13:45:25 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/08 14:12:28 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/08 16:31:17 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,9 @@ ritorna:
 
 static char function_name = 
 	per non permettere ad altre funzioni nel programma di potere utilizzarla
+
+malloc
+void *malloc( size_t size );
 */
 
 // #include <stdio.h> // printf

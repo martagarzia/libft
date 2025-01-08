@@ -6,7 +6,7 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 13:45:01 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/08 15:04:39 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/08 16:46:17 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <stdlib.h> // malloc, free, NULL, size_t
 // # include <stddef.h> // size_t, NULL
+// # include <limits.h> // INT_MIN, INT_MAX
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -46,8 +47,8 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *s2);
 char	**ft_split(char const *str, char c);
 char	*ft_itoa(int n);
-
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
