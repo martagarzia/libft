@@ -6,11 +6,16 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 11:34:39 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/09 14:34:56 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/09 23:42:02 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
+lstnew
+crea un nuovo nodo per una lista concatenata, 
+inizializza il contenuto del nodo con il valore passato.
+___________________________________________________________________________
+
 lista concatenata
 	|- nodo 1 -> [2 mele]->[next] -> 
 	|- nodo 2 -> [1 maglietta]->[next] -> 

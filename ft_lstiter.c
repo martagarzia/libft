@@ -1,44 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/09 22:18:42 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/09 23:03:55 by mgarzia          ###   ########.fr       */
+/*   Created: 2025/01/09 22:58:35 by mgarzia           #+#    #+#             */
+/*   Updated: 2025/01/09 23:15:57 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-elimina tutti i nodi da una lista, li dealloca. 
-Imposta il puntatore alla lista a NULL.
+lstiter
+applica una funzione f su ogni elemento della lista lst. 
+
+return:
+Nnulla, tipo void.
 */
 
 // #include <stdio.h> // printf
 #include "libft.h"
 #include <stdlib.h> // malloc, free, NULL, size_t
 /*
-void	del(void *content)
+void	print_content(void *content)
 {
-	free(content);
+	printf("%d\n", (int)content + 100);
 }
 */
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_list	*current_node;
-
-	if (lst == NULL || *lst == NULL || del == NULL)
+	if (lst == NULL)
 		return ;
-	while (*lst)
+	while (lst != NULL)
 	{
-		current_node = (*lst)->next;
-		del((*lst)->content);
-		free(*lst);
-		*lst = current_node;
+		f((lst)->content);
+		lst = lst->next;
 	}
-	*lst = NULL;
 }
 
 /*
@@ -60,11 +58,15 @@ int	main(void)
 	node2->next = node3;
 	node3->next = NULL;
 
-	printf("%d\n", (int)node1->content);
+	// printf("%d\n", (int)node1->content);
 
-	ft_lstclear(node1, del);
+	ft_lstiter(node1, print_content);
 
-	printf("%d\n", (int)node1->content);
+	// printf("%d\n", (int)node1->content);
+
+	free(node1);
+    free(node2);
+    free(node3);
 
 	return (0);
 }
