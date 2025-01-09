@@ -6,7 +6,7 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 11:34:39 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/09 14:26:39 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/09 14:34:56 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ t_list	*ft_lstnew(void *content)
 	t_list	*node;
 
 	node = malloc(sizeof(t_list));
-	if (!node)
+	if (node == NULL)
 		return (NULL);
 	node->content = content;
 	node->next = NULL;
