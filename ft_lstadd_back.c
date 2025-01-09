@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/09 18:25:46 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/09 19:23:26 by mgarzia          ###   ########.fr       */
+/*   Created: 2025/01/09 19:29:45 by mgarzia           #+#    #+#             */
+/*   Updated: 2025/01/09 19:49:02 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-lstlast
-Restituisce l'ultimo nodo della lista concatenata.
+lstadd_back
+aggiunge un nuovo nodo alla fine di una lista collegata.
+
 ritorna:
-- se lista è vuota: NULL
-- se lista non è vuota: puntatore all'ultimo nodo della lista.
+- Se la lista è vuota: non ritorna nulla.
+- Se la lista ha già elementi: Aggiunge new come ultimo nodo della lista.
+
 */
 
 // #include <stdio.h> // printf
@@ -33,6 +35,24 @@ t_list	*ft_lstlast(t_list *lst)
 	}
 	return (lst);
 }
+
+void	ft_lstadd_back(t_list **lst, t_list *new)
+{
+	t_list	*current;
+
+	if (lst == NULL)
+		return ;
+	if (*lst != NULL)
+	{
+		current = ft_lstlast(*lst);
+		current->next = new;
+	}
+	else
+	{
+		*lst = new;
+	}
+}
+
 /*
 int	main(void)
 {
@@ -40,27 +60,32 @@ int	main(void)
 	t_list	*node1;
 	t_list	*node2;
 	t_list	*node3;
-	t_list	*last_node;
+	t_list	*new;
 
 	node1 = malloc(sizeof(t_list));
 	node2 = malloc(sizeof(t_list));
 	node3 = malloc(sizeof(t_list));
+	new = malloc(sizeof(t_list));
 
 	node1->content = (void *)21;
 	node2->content = (void *)22;
 	node3->content = (void *)23;
+	new->content = (void *)24;
 
 	head = node1;
 	node1->next = node2;
 	node2->next = node3;
 	node3->next = NULL;
 
-	last_node = ft_lstlast(head);
+	ft_lstadd_back(&head, new);
+
+	t_list *last_node = ft_lstlast(head);
 	printf("%d\n", (int)last_node->content);
 	
 	free(node1);
 	free(node2);
 	free(node3);
+	free(new);
 
 	return (0);
 }
