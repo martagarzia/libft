@@ -6,18 +6,18 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 13:45:01 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/09 10:17:32 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/09 12:09:11 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdio.h>
+# include <stdio.h> // printf
 # include <unistd.h>
 # include <stdlib.h> // malloc, free, NULL, size_t
+# include <limits.h> // INT_MIN, INT_MAX
 // # include <stddef.h> // size_t, NULL
-// # include <limits.h> // INT_MIN, INT_MAX
 // # <unistd.h> // write
 
 int		ft_isalpha(int c);
@@ -54,5 +54,20 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+
+/* 
+s_list = è un nodo di una lista concatenata
+content = il contenuto che voglio mettere nel nodo della lista
+*next = puntatore al prossimo nodo della lista
+t_list = nuovo tipo di dato:
+	un nuovo tipo di variabile (es. int, char), che si comporta come s_list.
+*/
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
+
+t_list	*ft_lstnew(void *content);
 
 #endif

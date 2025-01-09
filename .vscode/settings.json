@@ -3,6 +3,7 @@
 		"stdio.h": "c",
 		"stddef.h": "c",
 		"libft.h": "c",
-		"stdlib.h": "c"
+		"stdlib.h": "c",
+		"unistd.h": "c"
 	}
 }
