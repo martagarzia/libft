@@ -6,12 +6,14 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 13:46:25 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/09 10:17:25 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/09 10:20:31 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-
+scrive il valore di un intero (in formato stringa) su un descrittore di file.
+return:
+Non restituisce nulla (void).
 */
 
 #include "libft.h"
