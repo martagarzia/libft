@@ -1,91 +1,70 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/09 19:29:45 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/09 19:50:17 by mgarzia          ###   ########.fr       */
+/*   Created: 2025/01/09 22:18:42 by mgarzia           #+#    #+#             */
+/*   Updated: 2025/01/09 22:54:52 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-lstadd_back
-aggiunge un nuovo nodo alla fine di una lista collegata.
-
-ritorna:
-- Se la lista è vuota: non ritorna nulla.
-- Se la lista ha già elementi: Aggiunge new come ultimo nodo della lista.
-
+elimina tutti i nodi da una lista, li dealloca. 
+Imposta il puntatore alla lista a NULL.
 */
 
 // #include <stdio.h> // printf
 #include "libft.h"
-
-t_list	*ft_lstlast(t_list *lst)
+#include <stdlib.h> // malloc, free, NULL, size_t
+/*
+void	del(void *content)
 {
-	while (lst != NULL)
-	{
-		if (lst->next == NULL)
-		{
-			return (lst);
-		}
-		lst = lst->next;
-	}
-	return (lst);
+	free(content);
 }
+*/
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list	*current;
+	t_list	*current_node;
 
-	if (lst == NULL)
+	if (lst == NULL || *lst == NULL || del == NULL)
 		return ;
-	if (*lst != NULL)
+	while (*lst)
 	{
-		current = ft_lstlast(*lst);
-		current->next = new;
+		current_node = (*lst)->next;
+		del((*lst)->content);
+		free(*lst);
+		*lst = current_node;
 	}
-	else
-	{
-		*lst = new;
-	}
+	*lst = NULL;
 }
 
 /*
 int	main(void)
 {
-	t_list	*head;
 	t_list	*node1;
 	t_list	*node2;
 	t_list	*node3;
-	t_list	*new;
 
 	node1 = malloc(sizeof(t_list));
 	node2 = malloc(sizeof(t_list));
 	node3 = malloc(sizeof(t_list));
-	new = malloc(sizeof(t_list));
 
 	node1->content = (void *)21;
 	node2->content = (void *)22;
 	node3->content = (void *)23;
-	new->content = (void *)24;
 
-	head = node1;
 	node1->next = node2;
 	node2->next = node3;
 	node3->next = NULL;
 
-	ft_lstadd_back(&head, new);
+	printf("%d\n", (int)node1->content);
 
-	t_list *last_node = ft_lstlast(head);
-	printf("%d\n", (int)last_node->content);
-	
-	free(node1);
-	free(node2);
-	free(node3);
-	free(new);
+	ft_lstclear(node1, del);
+
+	printf("%d\n", (int)node1->content);
 
 	return (0);
 }
