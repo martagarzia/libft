@@ -6,7 +6,7 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 13:45:01 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/09 12:09:11 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/09 14:33:14 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
 /* 
-s_list = è un nodo di una lista concatenata
+s_list = crea un nodo di una lista concatenata.
 content = il contenuto che voglio mettere nel nodo della lista
 *next = puntatore al prossimo nodo della lista
 t_list = nuovo tipo di dato:

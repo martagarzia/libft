@@ -6,7 +6,7 @@
 /*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 11:34:39 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/09 13:21:37 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/09 14:26:39 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,16 +63,17 @@ t_list	*ft_lstnew(void *content)
 /*
 int	main(void)
 {
-	int	value = 30;
-	// int	value = -20;
-	// int	value = INT_MIN;
-	// int	value = NULL;
+	int		number = 30;
+	int		*value = number;
 
-	t_list *new_node = ft_lstnew(&value);
+	// char	*value = "2 apples";
 
-	printf("%d\n", *(int *)(new_node->content));
+	t_list *node = ft_lstnew(value);
 
-    free(new_node);
+	printf("%d\n", node->content);
+	// printf("%s\n", node->content); 
+
+    free(node);
 	return (0);
 }
 */
