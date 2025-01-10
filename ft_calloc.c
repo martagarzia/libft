@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mgarzia <mgarzia@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 18:17:51 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/08 10:50:41 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/10 15:32:23 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,55 +18,54 @@ alloca dinamicamente memoria, che viene inizializzata a zero.
 - moltiplica n * size, per determinare il numero di byte da allocare
 - passa questa dimensione a malloc per cercare nell'heap (memoria)
 	un blocco di memoria contiguo
-- se lo trova = alloca e imposta ogni byte a 0, ritorna puntatore
-	al primo byte della memoria allocata
-- se non lo trova = restituisce null
+- se lo trova = alloca e imposta ogni byte a 0, 
+ritorna:
+- se lo trova = puntatore al primo byte della memoria allocata
+- se non lo trova = NULL
 
 malloc
 void *malloc( size_t size );
-- richiede un blocco di memoria size_t size
-- cerca spazio nello heap (nella memoria)
-- se lo trova = restituisce puntatore a primo byte del blocco allocato
-- se non lo strova = restituisce NULL
 
-memset:
-- imposta n byte di un'area di memoria a un valore specificato c.
-- restituisce il puntatore ptr, 
-	che rappresenta l'inizio dell'area di memoria modificata.
+ft_bzero
+Partendo dall'indirizzo di memoria specificato in str, 
+imposta a zero (0x00) 
+la quantità di byte consecutivi specificata da n. 
+ritorna = void.
 
 */
 
 // #include <stdio.h>
-// #include <stdint.h> // SIZE_MAX
 #include "libft.h"
-// #include <stddef.h> // size_t
-#include <stdlib.h> // malloc, size_t
+#include <stdint.h> // SIZE_MAX
 /*
-void	*ft_memset(void *ptr, int c, size_t n)
+void	ft_bzero(void *str, size_t n)
 {
-	unsigned char	*dest;
-	size_t			i;
+	size_t	i;
+	char	*ptr;
 
-	dest = (unsigned char *)ptr;
+	ptr = (char *)str;
 	i = 0;
 	while (i < n)
 	{
-		dest[i] = (unsigned char)c;
+		ptr[i] = 0;
 		i++;
 	}
-	return (ptr);
 }
 */
-void	*ft_calloc(size_t n, size_t size)
-{
-	void	*ptr_mem;
 
-	ptr_mem = malloc(n * size);
-	if (ptr_mem == NULL)
+void	*ft_calloc(size_t num, size_t dim)
+{
+	void	*str;
+
+	if (dim != 0 && num > SIZE_MAX / dim)
+	{
 		return (NULL);
-	else
-		ft_memset(ptr_mem, 0, n * size);
-	return (ptr_mem);
+	}
+	str = malloc(num * dim);
+	if (!str)
+		return (NULL);
+	ft_bzero(str, num * dim);
+	return (str);
 }
 /*
 int	main(void)

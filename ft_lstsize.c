@@ -3,21 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mgarzia <mgarzia@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 17:29:37 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/09 17:38:18 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/10 15:59:53 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-lstsize
-conta quanti nodi ci sono in una lista,
-	a partire dal primo nodo (lst).
+	lstsize
+	conta quanti nodi ci sono in una lista,
+		a partire dal primo nodo (lst).
 
-ritorna:
-- se lista non è vuota = umero int di nodi nella lista.
-- se lista è vuota (lst == NULL) = restituisce 0.
+	ritorna:
+	- se lista non è vuota = umero int di nodi nella lista.
+	- se lista è vuota (lst == NULL) = restituisce 0.
+
+	malloc
+	void *malloc( size_t size );
 */
 
 // #include <stdio.h> // printf
@@ -30,8 +33,8 @@ int	ft_lstsize(t_list *lst)
 	i = 0;
 	while (lst != NULL)
 	{
-		lst = lst->next;
 		i++;
+		lst = lst->next;
 	}
 	return (i);
 }

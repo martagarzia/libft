@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mgarzia <mgarzia@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 19:29:45 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/09 19:50:17 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/10 16:04:35 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ ritorna:
 
 // #include <stdio.h> // printf
 #include "libft.h"
-
+/*
 t_list	*ft_lstlast(t_list *lst)
 {
 	while (lst != NULL)
@@ -35,24 +35,16 @@ t_list	*ft_lstlast(t_list *lst)
 	}
 	return (lst);
 }
-
+*/
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*current;
-
-	if (lst == NULL)
+	if (lst == NULL || new == NULL )
 		return ;
 	if (*lst != NULL)
-	{
-		current = ft_lstlast(*lst);
-		current->next = new;
-	}
+		ft_lstlast(*lst)->next = new;
 	else
-	{
 		*lst = new;
-	}
 }
-
 /*
 int	main(void)
 {

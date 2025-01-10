@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mgarzia <mgarzia@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 13:47:28 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/07 11:43:24 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/10 15:49:40 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,6 @@ ritorna:
 - se alloca = puntatore alla strings risultate
 - se non alloca = NULL
 
-strlcpy
-copia da una stringa a un buffer,
-un numero di caratteri massimo a d_size -1,
-perchè aggiunge \0.
-ritorna:
-- lunghezza stringa source.
-- altrimenti NULL
-
 strchr
 scasiona *str carattere per carattere (compreso '\0')
 cerca c
@@ -33,8 +25,9 @@ ritrna:
 - se lo trova = puntatore all' indirizzo del carattere
 - se non lo trova = NULL
 
-malloc
-void *malloc( size_t size );
+strlen
+calcola la lunghezza di una stringa 
+escluso il carattere di terminazione null \0.
 
 */
 
@@ -42,18 +35,6 @@ void *malloc( size_t size );
 #include "libft.h"
 #include <stdlib.h> // malloc, size_t, NULL, free
 /*
-size_t	ft_strlen(const char *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
-
 char	*ft_strchr(const char *str, int c)
 {
 	int	i;
@@ -70,45 +51,59 @@ char	*ft_strchr(const char *str, int c)
 	return (NULL);
 }
 
-size_t	ft_strlcpy(char *d, const char *s, size_t d_size)
+size_t	ft_strlen(const char *str)
 {
 	size_t	i;
-	size_t	s_size;
 
 	i = 0;
-	s_size = 0;
-	while (s[s_size] != '\0')
-		s_size++;
-	if (d_size > 0)
+	while (str[i] != '\0')
 	{
-		while (s[i] != '\0' && i < (d_size - 1))
-		{
-			d[i] = s[i];
-			i++;
-		}
-		d[i] = '\0';
+		i++;
 	}
-	return (s_size);
+	return (i);
+}
+
+char	*ft_substr(const char *s, unsigned int start, size_t len)
+{
+	char			*new;
+	unsigned int	i;
+	size_t			len_str;
+
+	i = -1;
+	if (s == NULL)
+		return (NULL);
+	len_str = ft_strlen(s);
+	if (len > len_str)
+		len = len_str;
+	if (len == 0 || start >= len_str)
+		len = 0;
+	else if (start + len > len_str)
+		len = len_str - start;
+	new = (char *) malloc(sizeof(char) * (len + 1));
+	if (new == NULL)
+		return (NULL);
+	while (++i < len && s[i] != '\0')
+		new[i] = s[start + i];
+	new[i] = '\0';
+	return (new);
 }
 */
 char	*ft_strtrim(char const *s1, char const *s2)
 {
-	size_t	a;
-	size_t	z;
-	char	*ptr_strim;
+	char	*str;
+	size_t	start;
+	size_t	end;
 
-	a = 0;
-	z = ft_strlen(s1);
 	if (s1 == NULL || s2 == NULL)
 		return (NULL);
-	while ((s1[a] != '\0') && (ft_strchr(s2, s1[a]) != NULL))
-		a++;
-	while ((z > a) && (ft_strchr(s2, s1[z -1])) != NULL)
-		z--;
-	ptr_strim = (char *)malloc(sizeof(char) * (z - a + 1));
-	if (ptr_strim != NULL)
-		ft_strlcpy(ptr_strim, &s1[a], z - a + 1);
-	return (ptr_strim);
+	start = 0;
+	while (s1[start] && ft_strchr(s2, s1[start]))
+		start++;
+	end = ft_strlen(s1);
+	while (end > start && ft_strchr(s2, s1[end - 1]))
+		end--;
+	str = ft_substr(s1, start, end - start);
+	return (str);
 }
 /*
 int	main(void)

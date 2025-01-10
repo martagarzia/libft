@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mgarzia <mgarzia@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 13:45:01 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/10 00:01:08 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/10 17:35:46 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
 # include <stdlib.h> // malloc, free, NULL, size_t
 # include <limits.h> // INT_MIN, INT_MAX
 // # include <stddef.h> // size_t, NULL
-// # <unistd.h> // write
+// # include <unistd.h> // write
+// # include <stdint.h> // SIZE_MAX
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);

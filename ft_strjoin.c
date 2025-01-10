@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mgarzia <mgarzia@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 13:47:01 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/06 22:29:27 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/10 15:59:51 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@
 #include "libft.h"
 #include <stdlib.h> // malloc, size_t
 /*
-size_t	ft_strlen(char const *s)
+size_t	ft_strlen(const char *str)
 {
 	size_t	i;
 
 	i = 0;
-	while (s[i] != '\0')
+	while (str[i] != '\0')
 	{
 		i++;
 	}
@@ -43,27 +43,26 @@ size_t	ft_strlen(char const *s)
 */
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*ptr_concat;
-	int		i1;
-	int		i2;
+	int		i;
+	int		j;
+	char	*str;
 
-	i1 = 0;
-	i2 = 0;
-	ptr_concat = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
-	if (ptr_concat == NULL)
+	i = 0;
+	j = 0;
+	if (s1 == NULL || s2 == NULL )
 		return (NULL);
-	while (s1[i1] != '\0')
+	str = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (str == NULL )
+		return (NULL);
+	while (s1[i])
+		str[j++] = s1[i++];
+	i = 0;
+	while (s2[i])
 	{
-		ptr_concat[i1] = s1[i1];
-		i1++;
+		str[j++] = s2[i++];
 	}
-	while (s2[i2] != '\0')
-	{
-		ptr_concat[i1 + i2] = s2[i2];
-		i2++;
-	}
-	ptr_concat[i1 + i2] = '\0';
-	return (ptr_concat);
+	str[j] = '\0';
+	return (str);
 }
 /*
 int	main(void)

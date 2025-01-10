@@ -3,55 +3,49 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mgarzia <mgarzia@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 19:28:11 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/06 21:57:56 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/10 15:32:44 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+cerca prima occorenza si stringa sub (substring),
+all'interno dei primi n caratteri di stringa src (source string).
+
+restituisce
+Se sub è una stringa vuota ("") = un puntatore alla posizione iniziale di src.
+
+Se sub viene trovata in src entro i primi n caratteri = 
+	un puntatore alla posizione iniziale di sub in src.
+
+Se sub non viene trovata entro i primi n caratteri = NULL.
+*/
+
 // #include <stdio.h>
 #include "libft.h"
-#include <stddef.h> // size_t
-/*
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+#include <stdlib.h> // malloc, free, NULL, size_t
+
+char	*ft_strnstr(const char *src, const char *sub, size_t len)
 {
 	size_t	i;
+	size_t	j;
 
 	i = 0;
-	while (i < n && (s1[i] || s2[i]))
+	if (*sub == '\0')
+		return ((char *) src);
+	while (src[i] != '\0' && i < len)
 	{
-		if (s1[i] != s2[i])
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-		i++;
-	}
-	return (0);
-}
-*/
-/*
-size_t	ft_strlen(const char *str)
-{
-	size_t	l;
-
-	l = 0;
-	while (str[l] != '\0')
-		l++;
-	return (l);
-}
-*/
-char	*ft_strnstr(const char *src, const char *sub, size_t n)
-{
-	size_t	i;
-	size_t	sub_l;
-
-	i = 0;
-	sub_l = ft_strlen(sub);
-	if (sub[0] == '\0')
-		return ((char *)src);
-	while ((i < n) && (i + sub_l <= n))
-	{
-		if (ft_strncmp(&src[i], sub, sub_l) == 0)
-			return ((char *)&src[i]);
+		j = 0;
+		while (sub[j] == src[i + j] && i + j < len)
+		{
+			if (sub[j + 1] == '\0')
+			{
+				return ((char *)src + i);
+			}
+			j++;
+		}
 		i++;
 	}
 	return (NULL);

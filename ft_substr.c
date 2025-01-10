@@ -3,39 +3,60 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgarzia <mgarzia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mgarzia <mgarzia@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 13:47:35 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/06 22:36:10 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/10 15:49:46 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
 Estrae una sottostringa (substring) da una stringa (s).
+
+ritorna:
+- se alloca = puntatore a substring
+- se non alloca = NULL
 */
 
 // #include <stdio.h> // printf
 #include "libft.h"
 #include <stdlib.h> // malloc, size_t
-
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+/*
+size_t	ft_strlen(const char *str)
 {
-	char	*ptr_sub;
 	size_t	i;
 
 	i = 0;
-	if (s == NULL)
-		return (NULL);
-	ptr_sub = malloc(len + 1);
-	if (ptr_sub == NULL)
-		return (NULL);
-	while (i < len && s[start + i] != '\0')
+	while (str[i] != '\0')
 	{
-		ptr_sub[i] = s[start + i];
 		i++;
 	}
-	ptr_sub[i] = '\0';
-	return (ptr_sub);
+	return (i);
+}
+*/
+char	*ft_substr(const char *s, unsigned int start, size_t len)
+{
+	char			*new;
+	unsigned int	i;
+	size_t			len_str;
+
+	i = -1;
+	if (s == NULL)
+		return (NULL);
+	len_str = ft_strlen(s);
+	if (len > len_str)
+		len = len_str;
+	if (len == 0 || start >= len_str)
+		len = 0;
+	else if (start + len > len_str)
+		len = len_str - start;
+	new = (char *) malloc(sizeof(char) * (len + 1));
+	if (new == NULL)
+		return (NULL);
+	while (++i < len && s[i] != '\0')
+		new[i] = s[start + i];
+	new[i] = '\0';
+	return (new);
 }
 /*
 int	main(void)
