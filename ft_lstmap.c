@@ -6,7 +6,7 @@
 /*   By: mgarzia <mgarzia@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 00:00:54 by mgarzia           #+#    #+#             */
-/*   Updated: 2025/01/10 17:35:58 by mgarzia          ###   ########.fr       */
+/*   Updated: 2025/01/10 18:00:13 by mgarzia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,14 @@ aggiunge un nuovo nodo alla fine di una lista collegata.
 
 #include "libft.h"
 #include <stdlib.h> // malloc, free, NULL, size_t
+/*
+void	*add_100(void *content)
+{
+	int	*new_content;
 
-void	*add_100(void *content) {
-	int *new_content = malloc(sizeof(int));
+	new_content = malloc(sizeof(int));
 	*new_content = *(int *)content + 100;
-	return new_content;
+	return (new_content);
 }
 
 void	del(void *content)
@@ -97,6 +100,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	else
 		*lst = new;
 }
+*/
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
@@ -119,7 +123,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (mapped_list);
 }
-
+/*
 int main(void) {
 	t_list *node1;
 	t_list *node2;
@@ -161,3 +165,4 @@ int main(void) {
 
 	return 0;
 } 
+*/
